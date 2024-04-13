@@ -1,0 +1,22 @@
+// Question 5: Reverse Integer
+/*
+Write a program that takes an integer as input and returns an integer with reversed digit ordering.
+*/
+public class ReverseInteger {
+    public static int reverseInteger(int n) {
+        long reversed = 0;
+        while (n != 0) {
+            reversed = reversed * 10 + n % 10;
+            n /= 10;}
+        if (reversed > Integer.MAX_VALUE || reversed < Integer.MIN_VALUE) {
+            return 0;}
+        return (int) reversed;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(reverseInteger(500));  // 5
+        System.out.println(reverseInteger(-56));  // -65
+        System.out.println(reverseInteger(-90));  // -9
+        System.out.println(reverseInteger(91));   // 19
+    }
+}
